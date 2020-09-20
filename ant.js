@@ -1,4 +1,4 @@
-window.setInterval(updateAnt, 1)
+var test = window.setInterval(updateAnt, 1)
 class box{
     constructor(x, y, l, f){
     this.move=this.offset
@@ -145,3 +145,11 @@ function setAnt(gX, gY){
     var idx = ((gY-1)*w)+(gX-1)
     grid[idx].fillIn()
         }
+function speedControl(){
+    clearInterval(test)
+    test = window.setInterval(updateAnt, 1000)
+        }
+function speedControl2(){
+    clearInterval(test)
+    test = window.setInterval(updateAnt, 1)
+}
