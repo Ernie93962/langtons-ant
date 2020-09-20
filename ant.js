@@ -147,4 +147,7 @@ function setAnt(gX, gY){
         }
 function speedControl(){
     window.setInterval(updateAnt, -1000)
+        }
+function speedControl1(){
+    window.setInterval(updateAnt, 1000)
 }
