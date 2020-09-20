@@ -146,9 +146,10 @@ function setAnt(gX, gY){
     grid[idx].fillIn()
         }
 function speedControl(){
-    window.setInterval(updateAnt, -1000)
+    clearInterval(test)
+    test = window.setInterval(updateAnt, 1)
         }
 function speedControl1(){
     clearInterval(test)
-    test = window.setInterval(updateAnt, 1)
+    test = window.setInterval(updateAnt, 100)
         }
