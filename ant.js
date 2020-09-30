@@ -145,11 +145,7 @@ function setAnt(gX, gY){
     var idx = ((gY-1)*w)+(gX-1)
     grid[idx].fillIn()
         }
-function speedControl(){
+function speedControl(speed){
     clearInterval(test)
-    test = window.setInterval(updateAnt, 1)
-        }
-function speedControl1(){
-    clearInterval(test)
-    test = window.setInterval(updateAnt, 100)
+    test = window.setInterval(updateAnt, speed)
         }
