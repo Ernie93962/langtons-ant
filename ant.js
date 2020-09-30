@@ -149,3 +149,4 @@ function speedControl(speed){
     clearInterval(test)
     test = window.setInterval(updateAnt, speed)
         }
+        
