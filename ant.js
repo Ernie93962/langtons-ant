@@ -2,14 +2,17 @@ var test = window.setInterval(updateAnt, 1)
 class box{
     constructor(x, y, l, f){
     this.move=this.offset
+    this.color=['#ff0000', '#00ff00', '#0000ff']
     this.x=x
     this.y=y
     this.l=l
     this.f=f
     this.dirty=true
+    this.selection
     var canvas = document.getElementById('canvas');
     this.ctx = canvas.getContext('2d');
-    this.ctx.fillStyle=('#000000')
+    this.ctx.fillStyle = '#000000'
+    //this.ctx.fillStyle=this.color[this.selection]
     }
      fillIn(){
          if (this.f==false){
@@ -113,8 +116,9 @@ class ant{
 
     drawAnt(){
 
-       }
-}
+        }
+            }
+console.log(this.selection)
 var sqSize = 10
 var grid=[]
 var pos = 0
@@ -122,22 +126,22 @@ var w = Math.floor(1000/sqSize)
 var theAnt = new ant()
 
 for(k=0; k<1000; k+=sqSize){
-for(j=0; j<1000; j+=sqSize){
-b=j%50    
-grid.push(new box(j,k,sqSize,false))
-}
-}
+    for(j=0; j<1000; j+=sqSize){
+        b=j%50    
+        grid.push(new box(j,k,sqSize,false))
+            }
+                }
 
 theAnt.setAnt()
 grid.forEach(drawGrid)
 
 function drawGrid(aBox, idx){
     aBox.draw()
-    }
+        }
 
 function updateAnt(){
     theAnt.updateAnt()
-    }
+        }
 
 
 
@@ -148,5 +152,7 @@ function setAnt(gX, gY){
 function speedControl(speed){
     clearInterval(test)
     test = window.setInterval(updateAnt, speed)
-        }
-        
+        }        
+/*function colorChange(){
+    this.selection = (Math.floor(Math.random()*3))
+        }     */
